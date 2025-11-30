@@ -27,7 +27,7 @@ To get started with your own modifications, please follow these steps:
 - **analyze_improvement(scores: list)**: Analyzes the trend of improvement based on a list of scores.
 - **rank_students(students: list[tuple[str, int]])**: Ranks students based on their scores.
 
-### Learning Outcome: Basic Loops
+### Learning OutcomBasic Loops
 
 - **even_numbers(n: int)**: Generates a list of even numbers from 1 to n.
 - **odd_numbers(n: int)**: Generates a list of odd numbers from 1 to n.

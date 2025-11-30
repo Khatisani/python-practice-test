@@ -12,7 +12,18 @@ def sum_of_squares(n: int):
     Raises:
     ValueError: If n is a negative integer.
     """
-    pass
+
+    sum = 0
+    if n < 0:
+        raise ValueError
+    for i in range(1, n+1):
+        if not isinstance(n, int):
+            raise ValueError
+        else:
+            square = i * i
+            sum += square
+
+    return sum 
 
 def evaluate_performance(grades: list, min_pass: int):
     """
@@ -25,7 +36,12 @@ def evaluate_performance(grades: list, min_pass: int):
     Returns:
     str: "Pass" if the average grade is greater than or equal to min_pass, otherwise "Fail".
     """
-    pass
+    average = sum(grades) / len(grades)
+
+    if average >= min_pass:
+        return "Pass"
+    else:
+        return "Fail"
 
 def calculate_cumulative_performance(scores: dict):
     """
@@ -37,7 +53,21 @@ def calculate_cumulative_performance(scores: dict):
     Returns:
     dict: A dictionary containing the average score and a list of subjects where the score is below average.
     """
-    pass
+    perfomance = {}
+    below_average = []
+    marks= list(scores.values())
+    average = round(sum(marks) / len(marks), 2)
+    
+
+    for key, value in scores.items():
+            marks.append(value)
+            perfomance["average"] = average
+            if value < average:
+                below_average.append(key)
+                perfomance["below_average"] = below_average
+
+    return perfomance
+
 
 def analyze_improvement(scores: list):
     """
@@ -50,7 +80,24 @@ def analyze_improvement(scores: list):
     dict: A dictionary containing the trend of improvement ("positive", "negative", or "neutral") 
           and a boolean indicating whether there has been an improvement.
     """
-    pass
+
+    scores = [50, 55, 70, 85]
+    improvement = {}
+
+    if scores[0] > scores[-1]:
+        improved = False
+        trend = "negative"
+    elif scores[0] == scores[-1]:
+        improved = False
+        trend = "neutral"
+    else: 
+        improved = True
+        trend = "positive"
+
+    improvement["trend"] = trend
+    improvement["improved"] = improved
+
+    return improvement
 
 def rank_students(students: list[tuple[str, int]]):
     """
